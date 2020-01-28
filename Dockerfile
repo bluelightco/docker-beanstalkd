@@ -8,5 +8,4 @@ RUN mkdir -p /data
 
 EXPOSE 11300
 
-ENTRYPOINT ["/usr/bin/beanstalkd"]
-CMD ["-z $MAX_JOB_SIZE"]
+CMD ["sh", "-c", "/usr/bin/beanstalkd -b /data -z $MAX_JOB_SIZE"]
