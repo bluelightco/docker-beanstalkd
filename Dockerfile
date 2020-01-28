@@ -1,8 +1,8 @@
-FROM alpine:3.7
+FROM alpine:3.11
 
 ENV MAX_JOB_SIZE 65535
 
-RUN apk add --no-cache beanstalkd
+RUN apk add --no-cache beanstalkd=1.11-r0
 
 RUN addgroup -S beanstalkd \
     && adduser -S -G beanstalkd beanstalkd \
